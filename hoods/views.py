@@ -117,7 +117,7 @@ def create_neighbourhood(request):
             return redirect('index')
 
 def comment(request,id):
-    commentt = Message.objects.get(id=id)
+    comment = Message.objects.get(id=id)
     if request.method == 'POST':
         comment = CommentForm(request.POST)
         if comment.is_valid():
