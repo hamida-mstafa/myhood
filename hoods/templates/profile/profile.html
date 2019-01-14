@@ -7,7 +7,7 @@
           {{request.user.profile.neighbourhood}}
             {% if request.user.profile.dp %}
             <div class="row">
-            
+
 
             <div class="cont">
               <img id="" class="image" src="{{user.profile.dp.url}}" style="border-radius: 100%; width: 200px; height: 200px;" class="img-thumbnail " alt="">
@@ -15,7 +15,7 @@
                 <div class="text"><button class='btn btn-outline-success'  data-toggle="modal" data-target="#profile" >Edit profile</button></div>
               </div>
             </div>
-       
+
             {% else %}
             <div class="cont">
               <img id="" class="image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUShFoN8vCID0Rq3IjjbXGuSL3Pfun8wbkVYqrlOxECRptD4gK" style="border-radius: 100%; width: 200px; height: 200px;" class="img-thumbnail " alt="">
@@ -23,19 +23,19 @@
                 <div class="text"><button class='btn btn-outline-success'  data-toggle="modal" data-target="#profile" >Edit profile</button></div>
               </div>
             </div>
-       
-            <h3><em>{{ user.username}}</em></h3>
+
+            <h3><em>{{ user.dp}}</em></h3>
             {% endif %}
             <h3><em>{{ user.username}}</em></h3>
           </div>
             <h3><em>{{user.profile.bio}}</em></h3>
         </div>
       <button class='btn btn-outline-success'  data-toggle="modal" data-target="#neighbourhood" >Switch Neighbourhood</button>
-       
-          
-          
+
+
+
         <div class="col-md-4">
-          
+
         </div>
       </div>
       <hr>
@@ -43,14 +43,14 @@
 
 <div class="modal fade" id="profile" role="dialog">
     <div class="modal-dialog">
-  
+
         <!-- Modal content-->
         <div style="font-size: 20px; font-family: 'Mali', cursive;" class="modal-content">
             <div class="modal-header">
               <h2>EDIT PROFILE </h2>
-             
+
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-            
+
             </div>
               <div class='row' style="margin-left: 10px;" >
                   <em><b>N/B:<h4>Fill in all the fields</h4></b></em>
@@ -58,34 +58,34 @@
             <div class="modal-body">
                 <form action="{% url 'profile' %}" method="post" enctype="multipart/form-data">
                   {%csrf_token%}
-              
+
                   {% bootstrap_form form %}
-                  
+
                   <button class='btn btn-primary' type='submit' >SUBMIT</button>
               </form>
-               
 
-               
+
+
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
             </div>
-  
+
         </div>
     </div>
-  
+
   </div>
 
   <div class="modal fade" id="neighbourhood" role="dialog">
       <div class="modal-dialog">
-    
+
           <!-- Modal content-->
           <div style="font-size: 20px; font-family: 'Mali', cursive;" class="modal-content">
               <div class="modal-header">
                 <h2>Switch Neighbourhood </h2>
-               
+
                   <button type="button" class="close" data-dismiss="modal">&times;</button>
-              
+
               </div>
                 <div class='row' style="margin-left: 10px;" >
                     <em><b>N/B:<h4>Fill in all the fields</h4></b></em>
@@ -93,26 +93,26 @@
               <div class="modal-body">
                   <form action="{% url 'profile' %}" method="post" enctype="multipart/form-data">
                     {%csrf_token%}
-                
+
                     {% bootstrap_form neighbourhood %}
-                    
+
                     <button class='btn btn-primary' type='submit' >SUBMIT</button>
                 </form>
-                 
-  
-                 
+
+
+
                   <div class="modal-footer">
                       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                   </div>
               </div>
-    
+
           </div>
       </div>
-    
+
     </div>
-  
+
   <style>
-  
+
   .image {
   opacity: 1;
   display: block;
@@ -141,6 +141,6 @@
   opacity: 1;
 }
 
- 
+
   </style>
 {% endblock %}
