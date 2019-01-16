@@ -20,11 +20,11 @@ def signup(request):
             profile.save()
             login(request,user)
             return redirect('index')
-    return render(request,'signup.html',{"form":form})
+    return render(request,'registration/signup.html',{"form":form})
 
 @login_required(login_url='/auth/login/')
 def index(request):
-    businesses = Businesses.objects.filter(neighbourhood=request.user.profile.neighbourhood)
+    businesses = BusinessForm()
     print(businesses)
     comment = CommentForm()
     new_neighbourhood = NeighbourhoodsForm()
@@ -44,7 +44,7 @@ def index(request):
             messaging.neighbourhood = request.user.profile.neighbourhood
             messaging.save()
             return redirect('/')
-    messages = Message.objects.filter(neighbourhood=request.user.profile.neighbourhood)
+    messages = MessageForm
     if request.user.neighbourhood == None:
         message = 'PLEASE CLICK ON THE PROFILES OPTION AND CHOOSE A NEIGHBOURHOOD'
         return render(request,'index.html',{"comment":comment,"new_neighbourhood":new_neighbourhood,'businesses':businesses,"habari":message,'message_form':message_form,"messages":messages})
