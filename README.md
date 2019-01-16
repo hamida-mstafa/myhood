@@ -1,6 +1,7 @@
 # myhood
 A web application where users create profile linked to a community through which they can make posts, and interact with other Users and their businesses within a community.
 
+## by hamida mstafa
 
 ## User Requirements
 
@@ -39,7 +40,7 @@ This project was created on a debian linux platform but should work on other uni
 
 ### Cloning the repository
 ```bash
-git clone https://github.com/dk-denno/neighbourhood.git && cd neighbourhood
+git clone https://github.com/hamida-mstafa/myhood.git && cd myhood
 ```
 
 ### Creating a virtual environment
@@ -55,7 +56,7 @@ pip install -r requirements.txt
 ```
 
 ### Prepare environmet variables
-Create a .env file and add the following configutions to it
+Create a .env file and add the following configurations to it
 ```python
 SECRET_KEY= #secret key will be added by default
 DEBUG= #set to false in production
