@@ -24,7 +24,7 @@ def signup(request):
 
 @login_required(login_url='/auth/login/')
 def index(request):
-    businesses = BusinessForm()
+    businesses = Businesses.objects.all()
     print(businesses)
     comment = CommentForm()
     new_neighbourhood = NeighbourhoodsForm()
